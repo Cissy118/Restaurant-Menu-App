@@ -145,7 +145,7 @@ def getUserID(email):
 
 @app.route('/gdisconnect')
 def gdisconnect():
-        # Only disconnect a connected user.
+    # Only disconnect a connected user.
     credentials = login_session.get('credentials')
     if credentials is None:
         response = make_response(
@@ -264,7 +264,7 @@ def restaurantMenu(restaurant_id):
     courses = session.query(MenuItem.course).group_by(MenuItem.course)
     creator = getUserInfo(restaurant.user_id)
     if 'username' not in login_session or creator.id != login_session['user_id']:
-        return render_template('publicmenu.html', restaurant = restaurant, items = items, courses=courses)
+        return render_template('publicmenu.html', restaurant = restaurant, items = items, courses=courses, creator=creator)
     else:
         return render_template('menu.html', restaurant = restaurant, items = items, courses=courses)
 

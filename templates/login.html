@@ -1,37 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-  <!--LOAD PRE-REQUISITES FOR GOOGLE SIGN IN -->
-   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js">
-  </script>
-
+<!--LOAD PRE-REQUISITES FOR GOOGLE SIGN IN -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <script src="//apis.google.com/js/platform.js?onload=start"> </script>
-
 <!-- END PRE-REQUISITES FOR GOOGLE SIGN IN -->
-
-
 </head>
-
-
 <body>  
-
-
-<!-- GOOGLE PLUS SIGN IN-->
-
-          
-          <div id="signInButton">
-          <span class="g-signin"
-            data-scope="openid email"
-            data-clientid="1087438476761-ioffusjcf788ihcjo76ga1s5od94nkv9.apps.googleusercontent.com"
-            data-redirecturi="postmessage"
-            data-accesstype="offline"
-            data-cookiepolicy="single_host_origin"
-            data-callback="signInCallback"
-            data-approvalprompt="force">  
-          </span>
-        </div>
-
+<!-- GOOGLE PLUS SIGN IN--> 
+  <div id="signInButton">
+    <span class="g-signin"
+      data-scope="openid email"
+      data-clientid="1087438476761-ioffusjcf788ihcjo76ga1s5od94nkv9.apps.googleusercontent.com"
+      data-redirecturi="postmessage"
+      data-accesstype="offline"
+      data-cookiepolicy="single_host_origin"
+      data-callback="signInCallback"
+      data-approvalprompt="force">  
+    </span>
+  </div>
 <div id="result"></div>
 
 <script>
@@ -64,11 +51,6 @@ function signInCallback(authResult) {
 } 
 }
 </script>
-
-
-
 <!--END GOOGLE PLUS SIGN IN -->
-
-  </body>
-
-  </html>
+</body>
+</html>
