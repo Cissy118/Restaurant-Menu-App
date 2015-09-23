@@ -7,13 +7,15 @@ from sqlalchemy import create_engine
 
 Base = declarative_base()
 
+
 class User(Base):
-    __tablename__ ='user'
+    __tablename__ = 'user'
 
     id = Column(Integer, primary_key=True)
     name = Column(String(250), nullable=False)
     email = Column(String(250), nullable=False)
     picture = Column(String(250))
+
 
 class Restaurant(Base):
     __tablename__ = 'restaurant'
@@ -21,14 +23,16 @@ class Restaurant(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String(250), nullable=False)
     user_id = Column(Integer, ForeignKey('user.id'))
-    user=relationship(User)
+    user = relationship(User)
 
+# Serialize function to be able to send JSON objects in a serializable format
     @property
     def serialize(self):
         return {
-            'id':self.id,
-            'name':self.name,
+            'id': self.id,
+            'name': self.name,
         }
+
 
 class MenuItem(Base):
     __tablename__ = 'menu_item'
@@ -43,8 +47,7 @@ class MenuItem(Base):
     user_id = Column(Integer, ForeignKey('user.id'))
     user = relationship(User)
 
-# We added this serialize function to be able to send JSON objects in a
-# serializable format
+# Serialize function to be able to send JSON objects in a serializable format
     @property
     def serialize(self):
 
