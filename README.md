@@ -43,6 +43,6 @@ To delete a menu item click the Delete button below the item information.<br>
 There are three JSON APIs provided:
 <ul>
 <li>list of restaurants<br> /restaurants/JSON</li>
-<li>a full menu items of a resstaurant<br> /restaurants/<int:restaurant_id>/menu/JSON </li>
-<li>a menuItem's detail <br> /restaurants/<int:restaurant_id>/menu/<int:menu_id>/JSON </li>
+<li>a full menu items of a resstaurant<br> /restaurants/restaurant_id/menu/JSON </li>
+<li>a menuItem's detail <br> /restaurants/restaurant_id/menu/menu_id/JSON </li>
 </ul>
