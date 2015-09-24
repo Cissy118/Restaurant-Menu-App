@@ -192,11 +192,6 @@ def gdisconnect():
         return response
 
 
-@app.route('/restaurants/<int:restaurant_id>/menu/<int:menu_id>/JSON')
-def restaurantMenuItemJSON(restaurant_id, menu_id):
-    item = session.query(MenuItem).filter_by(id=menu_id).one()
-    return jsonify(MenuItem=item.serialize)
-
 # API Endpoint for the list of restaurants
 
 
